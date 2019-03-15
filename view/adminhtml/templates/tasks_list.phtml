@@ -1,0 +1,37 @@
+<?php
+
+/**
+ * @var \Magentotest\Tasks\Block\Adminhtml\TasksList $block
+ */
+
+$tasks = $this->getTasks();
+if (!empty($tasks)) {
+    ?>
+    <table>
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>Title</td>
+                <td>Status</td>
+                <td>Edit link</td>
+                <td>Delete link</td>
+            </tr>
+        </thead>
+        <tbody>
+        <?php
+        foreach ($tasks as $task) {
+            ?>
+            <tr>
+                <td><?php echo $task['id'] ?></td>
+                <td><?php echo $task['title'] ?></td>
+                <td><?php echo $task['status'] ?></td>
+                <td><a href="<?php echo $task['edit_link'] ?>">Edit</a></td>
+                <td><a href="<?php echo $task['delete_link'] ?>">Delete</a></td>
+            </tr>
+            <?php
+        }
+        ?>
+        </tbody>
+    </table>
+    <?php
+}
