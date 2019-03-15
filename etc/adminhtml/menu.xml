@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add
+                id="Magentotest_Tasks::task"
+                title="Tasks"
+                translate="title"
+                module="Magentotest_Tasks"
+                parent="Magento_Backend::content"
+                sortOrder="50"
+                dependsOnModule="Magentotest_Tasks"
+                resource="Magentotest_Tasks::task"/>
+        <add
+                id="Magentotest_Tasks::index"
+                title="Task list"
+                translate="title"
+                module="Magentotest_Tasks"
+                parent="Magentotest_Tasks::task"
+                sortOrder="10"
+                dependsOnModule="Magentotest_Tasks"
+                action="tasks"
+                resource="Magentotest_Tasks::main"/>
+        <add
+                id="Magentotest_Tasks::add"
+                title="Add task"
+                translate="title"
+                module="Magentotest_Tasks"
+                parent="Magentotest_Tasks::task"
+                sortOrder="10"
+                dependsOnModule="Magentotest_Tasks"
+                action="tasks/add"
+                resource="Magentotest_Tasks::main"/>
+    </menu>
+</config>
